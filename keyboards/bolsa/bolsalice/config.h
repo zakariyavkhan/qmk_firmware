@@ -1,4 +1,4 @@
-/* Copyright 2021 HorrorTroll <https://github.com/HorrorTroll>
+/* Copyright 2022 CMM.Studio Freather
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,37 +22,21 @@
 #define MATRIX_ROWS 5
 #define MATRIX_COLS 15
 
-/* key matrix pins */
-#define MATRIX_ROW_PINS { B0, B1, B2, B3, B7 }
-#define MATRIX_COL_PINS { D0, D1, D2, D3, D5, D4, D6, D7, B4, F7, F6, F5, F4, F1, F0 }
 
-#define BOOTMAGIC_LITE_ROW 0
-#define BOOTMAGIC_LITE_COLUMN 0
+#define MATRIX_ROW_PINS { B2, B3, C7, C6, B5 }
+#define MATRIX_COL_PINS { E6, F0, F1, F4, F5, F6, F7, B4, D7, D6, D4, D5, D3, D2, D1 }
 
-/* COL2ROW or ROW2COL */
-#define DIODE_DIRECTION ROW2COL
+#define DIODE_DIRECTION COL2ROW
 
-/* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
+#define RGB_DI_PIN B1
+#ifdef RGB_DI_PIN
+    #define RGBLED_NUM 8
+    #define RGBLIGHT_HUE_STEP 8
+    #define RGBLIGHT_SAT_STEP 8
+    #define RGBLIGHT_VAL_STEP 8
+    #define RGBLIGHT_LIMIT_VAL 255 /* The maximum brightness level */
+    #define RGBLIGHT_SLEEP  /* If defined, the RGB lighting will be switched off when the host goes to sleep */
 
-/* Forcing to use NKRO instead 6KRO */
-#define FORCE_NKRO
-
-/* LED Indicator */
-#define LED_CAPS_LOCK_PIN C7
-
-#ifdef BACKLIGHT_ENABLE
-    /* Backlight config */
-    #define BACKLIGHT_PIN B6
-    #define BACKLIGHT_LEVELS 6
-#endif
-
-#ifdef RGBLIGHT_ENABLE
-    /* RGB Lighting config */
-    #define RGB_DI_PIN E2
-    #define RGBLED_NUM 24
-
-    /* RGB Lighting effect */
     #define RGBLIGHT_EFFECT_BREATHING
     #define RGBLIGHT_EFFECT_RAINBOW_MOOD
     #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
@@ -62,5 +46,4 @@
     #define RGBLIGHT_EFFECT_STATIC_GRADIENT
     #define RGBLIGHT_EFFECT_RGB_TEST
     #define RGBLIGHT_EFFECT_ALTERNATING
-    #define RGBLIGHT_EFFECT_TWINKLE
 #endif
